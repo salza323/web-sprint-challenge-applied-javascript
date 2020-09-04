@@ -14,7 +14,7 @@
 
 axios.get ('https://lambda-times-api.herokuapp.com/topics')
     .then(function (response){
-        console.log(response)
+        // console.log(response)
         tabMaker(response.data)
     })
 
