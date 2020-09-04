@@ -19,7 +19,7 @@ axios.get ('https://lambda-times-api.herokuapp.com/topics')
     })
 
 
-const tabBar = document.querySelector('.title')
+const tabBar = document.querySelector('.topics')
 
 
 function tabMaker(data){

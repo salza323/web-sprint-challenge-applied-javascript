@@ -24,34 +24,37 @@
 axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then(function(response){
     console.log(response)
-    cardMaker(response.data)
+    cardMaker(response.data.articles.javascript)
 })
 
 const cards = document.querySelector('.cards-container')
 
 function cardMaker(data){
 
-    data.articles.forEach((item) =>{
+    data.forEach((item) =>{
+        console.log(item)
 
-    const card = document.querySelector('div')
+    const card = document.createElement('div')
     card.classList.add('card')
     cards.appendChild(card)
 
-    const headline = document.querySelector('div')
+    const headline = document.createElement('div')
     headline.classList.add('headline')
     headline.textContent = headline
 
-    const author = document.querySelector('div')
+    const author = document.createElement('div')
     author.classList.add('author')
 
-    const imgContainer = document.querySelector('div')
+    const imgContainer = document.createElement('div')
     imgContainer.classList.add('img-container')
 
-    const img = document.querySelector('img')
-    img.src = authorPhoto
+    const img = document.createElement('img')
+    img.src = item.authorPhoto
+    card.appendChild(img)
 
-    const credit = document.querySelector('span')
-    credit.textContent = authorName
+    const credit = document.createElement('span')
+    credit.textContent = item.authorName
+    card.appendChild(credit)
 
     card.addEventListener('click', function(event){
         event.target.console.log(headline)
