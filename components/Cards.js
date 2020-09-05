@@ -52,17 +52,19 @@ function cardMaker(data){
 
     const author = document.createElement('div')
     author.classList.add('author')
+    card.appendChild(author)
 
     const imgContainer = document.createElement('div')
     imgContainer.classList.add('img-container')
+    author.appendChild(imgContainer)
 
     const img = document.createElement('img')
     img.src = item.authorPhoto
-    card.appendChild(img)
+    imgContainer.appendChild(img)
 
     const credit = document.createElement('span')
     credit.textContent = item.authorName
-    card.appendChild(credit)
+    author.appendChild(credit)
 
     card.addEventListener('click', function(event){
         console.log(item.headline)
